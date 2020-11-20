@@ -6,8 +6,7 @@
 module.exports = ScrapeBitString;
 function ScrapeBitString(SourceText, ToFindText, ReadUntilString, CharsLimitFromFindText) {
 
-    const FindText = ToFindText; // To Find Text
-    const dIndex = SourceText.indexOf(FindText); // Get Index in string of the find Text.
+    const dIndex = SourceText.indexOf(ToFindText); // Get Index in string of the find Text.
 
     if (dIndex === -1) return null // If Find Text is not found return.
 
