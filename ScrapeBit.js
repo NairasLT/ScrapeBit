@@ -4,16 +4,13 @@
 // Result = awesomevalue
 
 module.exports = ScrapeBitString;
-function ScrapeBitString(SourceText, ToFindText, ReadUntilString, CharsLimitFromFindText) {
+function ScrapeBitString(SourceText, ToFindText, ReadUntilString) {
 
     const dIndex = SourceText.indexOf(ToFindText); // Get Index in string of the find Text.
 
     if (dIndex === -1) return null // If Find Text is not found return.
 
-    if (dIndex + CharsLimitFromFindText < SourceText.Length)
-        SourceText = SourceText.substring(dIndex + ToFindText.length, dIndex + ToFindText.length + CharsLimitFromFindText);
-    else
-        SourceText = SourceText.substring(dIndex + ToFindText.length);
+    SourceText = SourceText.substring(dIndex + ToFindText.length);
 
     let FoundTerminators = 0; // ? 0 index based
     let ReadTextChars = []; //Where to store the good chars.
