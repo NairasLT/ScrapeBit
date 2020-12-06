@@ -1,5 +1,5 @@
-module.exports = { String, AllString };
-function String(SourceText, ToFindText, ReadUntilString) {
+module.exports = { FirstString, AllString };
+function FirstString(SourceText, ToFindText, ReadUntilString) {
 
     const dIndex = SourceText.indexOf(ToFindText); // Get Index in string of the find Text.
 
