@@ -1,12 +1,27 @@
 ## ScrapeBit
 
 ### Example C#
-    string Value = "lloookofdko,,,text:awesometext]]-fds]e]";
-    string Result = ScrapeBit.String(Value, "text:", "]]", 30);
-    // Result = "awesometext" 
-  
+
+    // First Occurrance
+    string Value = "<script> var info = { name:\"Dovydas\",Year:2020 } </script> <h1>...</h1>";
+    string Result = ScrapeBit.FirstString(Value, "name:\"", "\",");
+    // Result = Dovydas
+    
+    // All Occurrances
+    string Value = "<script> var info = { name:\"Dovydas\", Brother: { name:\"Lukas\" } } </script> <h1>...</h1>";
+    string[] Results = ScrapeBit.AllString(Value, "name:\"", "\"");
+    // Results = [ "Dovydas", "Lukas" ];
+    
 ### Example Javascript
-    const ScrapeBitString = require("./ScrapeBit");
-    const Value = "lloookofdko,,,text:awesometext]]-fds]e]";
-    const Result = ScrapeBitString(Value, "text:", "]]", 30);
-    // Result = "awesometext" 
+
+    // First Occurrance
+    const ScrapeBit = require("./ScrapeBit");
+    const Value = "<script> var info = { name:\"Dovydas\",Year:2020 } </script> <h1>...</h1>";
+    const Result = ScrapeBit.FirstString(Value, "name:\"", "\"");
+    // Result = Dovydas
+    
+    // All Occurrances
+    const ScrapeBit = require("./ScrapeBit");
+    const Value = "<script> var info = { name:\"Dovydas\", Brother: { name:\"Lukas\" } } </script> <h1>...</h1>";
+    const Results = ScrapeBit.AllString(Value, "name:\"", "\"");
+    // Results = [ "Dovydas", "Lukas" ];
